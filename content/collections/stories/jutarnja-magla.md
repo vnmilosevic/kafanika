@@ -8,7 +8,7 @@ body: |-
   Планински крај не утиче само на поглед него и на расположење. Кад се стигне из магле у топлу просторију, кафа има јачи смисао, а ручак делује заслужено.
 
   Зато ова прича није само о локацији, већ о осећају доласка.
-image_url: https://images.unsplash.com/photo-1761587600982-55c15b9bb6b8?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800
+image_url: https://unsplash.com/photos/VkeuvuTOCdc/download?force=true&w=1800
 image_alt: Магловита планинска долина и пут
 image_caption: Долазак који успорава дан
 sort_order: 2

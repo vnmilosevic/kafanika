@@ -9,7 +9,7 @@ intro_text: Кафаника је мали кафе ресторан у брди
 character_eyebrow: Карактер
 character_text: |-
   Нема велике приче ради ефекта. Постоји само јасна идеја: добра кафа, неколико домаћих јела, колачи који миришу на кућу и осећај да је овде сасвим нормално остати мало дуже него што си планирао.
-mood_image_url: https://images.unsplash.com/photo-1761587600982-55c15b9bb6b8?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800
+mood_image_url: https://unsplash.com/photos/VkeuvuTOCdc/download?force=true&w=1800
 mood_image_alt: Магловита долина и пут кроз планину
 mood_image_eyebrow: Крај око нас
 mood_image_text: Природа око Кафанике није само позадина. Она улази у јеловник, у расположење и у разлог због кога људи остају.

@@ -36,7 +36,7 @@ guest_notes:
     text: Простор за колач, одмор и мирнији темпо викендом.
 gallery_images:
   -
-    image_url: https://images.unsplash.com/photo-1761587600982-55c15b9bb6b8?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800
+    image_url: https://unsplash.com/photos/VkeuvuTOCdc/download?force=true&w=1800
     alt: Планинска долина под маглом и пут
     caption: Пут, брда и долазак без журбе
   -

@@ -1,7 +1,40 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
-  themes: lofi --default;
+  themes: false;
+}
+@plugin "daisyui/theme" {
+  name: "kafanika";
+  default: true;
+  color-scheme: light;
+  --color-base-100: oklch(97.8% 0.012 95.4);
+  --color-base-200: oklch(95.8% 0.014 95.4);
+  --color-base-300: oklch(90.4% 0.018 95.4);
+  --color-base-content: oklch(18.4% 0.01 88.5);
+  --color-primary: oklch(19.5% 0.012 92.1);
+  --color-primary-content: oklch(97.8% 0.012 95.4);
+  --color-secondary: oklch(54.5% 0.03 154.8);
+  --color-secondary-content: oklch(97.8% 0.012 95.4);
+  --color-accent: oklch(74.8% 0.026 145.6);
+  --color-accent-content: oklch(18.4% 0.01 88.5);
+  --color-neutral: oklch(20.1% 0.012 92.1);
+  --color-neutral-content: oklch(97.8% 0.012 95.4);
+  --color-info: oklch(79.54% 0.103 205.9);
+  --color-info-content: oklch(15.908% 0.02 205.9);
+  --color-success: oklch(82.5% 0.073 155.2);
+  --color-success-content: oklch(20.1% 0.012 92.1);
+  --color-warning: oklch(88.37% 0.135 79.94);
+  --color-warning-content: oklch(17.674% 0.027 79.94);
+  --color-error: oklch(78.66% 0.15 28.47);
+  --color-error-content: oklch(15.732% 0.03 28.47);
+  --radius-selector: 9999px;
+  --radius-field: 0.65rem;
+  --radius-box: 1.4rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
 }
 @source "../views";
 @source "../../content";
@@ -28,9 +61,9 @@
   body {
     min-height: 100vh;
     background:
-      radial-gradient(circle at top left, color-mix(in oklab, var(--color-earth-200) 55%, white) 0, transparent 32%),
-      radial-gradient(circle at bottom right, color-mix(in oklab, var(--color-earth-100) 70%, white) 0, transparent 30%),
-      linear-gradient(180deg, #fbf8f1 0%, #f3eee4 45%, #ece4d6 100%);
+      radial-gradient(circle at top left, color-mix(in oklab, var(--color-secondary) 18%, white) 0, transparent 30%),
+      radial-gradient(circle at bottom right, color-mix(in oklab, var(--color-accent) 22%, white) 0, transparent 28%),
+      linear-gradient(180deg, #faf8f2 0%, #f4f0e7 42%, #ece6d9 100%);
     font-family: var(--font-body);
   }
 
@@ -46,16 +79,16 @@
   }
 
   .site-frame {
-    @apply mx-auto flex min-h-[calc(100vh-2rem)] max-w-7xl flex-col overflow-hidden rounded-[2rem] border border-base-300/80 bg-base-100/90 shadow-[0_25px_80px_rgba(47,36,24,0.12)] backdrop-blur;
+    @apply mx-auto flex min-h-[calc(100vh-2rem)] max-w-7xl flex-col overflow-hidden rounded-[2rem] border border-base-300/70 bg-base-100/88 shadow-[0_30px_90px_rgba(33,28,22,0.12)] backdrop-blur;
   }
 
   .site-nav-link {
-    @apply rounded-full px-4 py-2 text-sm tracking-[0.18em] text-base-content/65 uppercase transition;
+    @apply rounded-full px-4 py-2 text-sm tracking-[0.18em] text-base-content/62 uppercase transition duration-200;
   }
 
   .site-nav-link:hover,
   .site-nav-link[aria-current="page"] {
-    @apply bg-base-content text-base-100;
+    @apply bg-neutral text-neutral-content;
   }
 
   .eyebrow {
@@ -68,11 +101,11 @@
   }
 
   .section-card {
-    @apply rounded-[1.75rem] border border-base-300 bg-base-100/80 p-6 shadow-sm sm:p-8;
+    @apply rounded-[1.75rem] border border-base-300/90 bg-base-100/82 p-6 shadow-[0_8px_24px_rgba(28,27,24,0.04)] sm:p-8;
   }
 
   .photo-card {
-    @apply overflow-hidden rounded-[1.75rem] border border-base-300 bg-base-100 shadow-sm;
+    @apply overflow-hidden rounded-[1.75rem] border border-base-300/90 bg-base-100 shadow-[0_8px_24px_rgba(28,27,24,0.05)];
   }
 
   .photo-card img {
@@ -84,7 +117,7 @@
   }
 
   .photo-caption {
-    @apply border-t border-base-300/80 px-4 py-3 text-xs uppercase tracking-[0.2em] text-base-content/55;
+    @apply border-t border-base-300/80 bg-base-100/90 px-4 py-3 text-xs uppercase tracking-[0.2em] text-base-content/55;
   }
 
   .hero-image {
@@ -114,5 +147,27 @@
 
   .menu-row:last-child {
     @apply border-b-0 pb-0;
+  }
+
+  .btn {
+    @apply font-medium tracking-[0.08em] shadow-none;
+  }
+
+  .btn-neutral {
+    @apply border-transparent bg-neutral text-neutral-content;
+  }
+
+  .btn-neutral:hover {
+    background: color-mix(in oklab, var(--color-neutral) 88%, black);
+  }
+
+  .btn-outline {
+    @apply border-base-content/18 bg-base-100/40 text-base-content;
+  }
+
+  .btn-outline:hover {
+    background: color-mix(in oklab, var(--color-secondary) 10%, white);
+    border-color: color-mix(in oklab, var(--color-secondary) 45%, var(--color-base-300));
+    color: var(--color-base-content);
   }
 }

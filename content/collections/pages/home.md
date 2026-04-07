@@ -39,7 +39,7 @@ traits:
   -
     id: Xa1T7LVm
     text: 'Топао ентеријер, дрво, камен и поглед на брда.'
-hero_image_url: 'https://images.unsplash.com/photo-1761587600982-55c15b9bb6b8?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800'
+hero_image_url: 'https://unsplash.com/photos/VkeuvuTOCdc/download?force=true&w=1800'
 hero_image_alt: 'Пут који пролази кроз магловиту планинску долину'
 hero_image_eyebrow: 'Пут до нас'
 hero_image_text: 'До Кафанике се не долази успут. Свраћа се кад ти треба поглед, тишина и сто на ком кафа стиже без журбе.'
