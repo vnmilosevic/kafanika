@@ -5,6 +5,9 @@
         <p class="mt-5 max-w-2xl text-lg leading-8 text-base-content/75">
             {{ intro_text }}
         </p>
+        <div class="mt-6">
+            <a href="https://www.google.com/maps/search/?api=1&query=Ivanjica" class="btn btn-neutral rounded-full px-6" target="_blank" rel="noreferrer">Пронађи нас</a>
+        </div>
         <div class="mt-8 grid gap-5 sm:grid-cols-2">
             {{ contact_details }}
                 <div>
@@ -33,9 +36,9 @@
     </div>
 </section>
 
-<section class="mt-6 grid gap-6 md:grid-cols-3">
-    {{ gallery_images }}
-        <figure class="photo-card aspect-[0.95] {{ if index == 0 }}md:col-span-2{{ /if }}">
+<section class="mt-6 grid gap-6 md:grid-cols-[1.35fr_0.65fr]">
+    {{ gallery_images limit="1" }}
+        <figure class="photo-card aspect-[1.55] h-full">
             <img
                 src="{{ image_url }}"
                 alt="{{ alt }}"
@@ -45,4 +48,18 @@
             <figcaption class="photo-caption">{{ caption }}</figcaption>
         </figure>
     {{ /gallery_images }}
+
+    <div class="grid gap-6">
+        {{ gallery_images offset="1" }}
+            <figure class="photo-card aspect-[1/1]">
+                <img
+                    src="{{ image_url }}"
+                    alt="{{ alt }}"
+                    loading="lazy"
+                    decoding="async"
+                >
+                <figcaption class="photo-caption">{{ caption }}</figcaption>
+            </figure>
+        {{ /gallery_images }}
+    </div>
 </section>

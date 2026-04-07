@@ -43,4 +43,8 @@ gallery_images:
     image_url: https://images.unsplash.com/photo-1760891961428-ee1946302cb5?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1200
     alt: Кафа и колач на столу
     caption: За кратко свраћање које траје дуже
+  -
+    image_url: https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1200
+    alt: Шоља кафе на дрвеном столу уз топло светло
+    caption: Још једна пауза пре поласка
 ---
