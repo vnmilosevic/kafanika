@@ -5,3 +5,81 @@
 }
 @source "../views";
 @source "../../content";
+
+@theme {
+  --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --font-body: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --color-earth-50: #f8f4ec;
+  --color-earth-100: #efe6d7;
+  --color-earth-200: #dbc7ab;
+  --color-earth-300: #c6ab83;
+  --color-earth-700: #715537;
+  --color-earth-900: #2f2418;
+  --color-forest-500: #5f7651;
+  --color-forest-700: #384734;
+  --color-wine-700: #6f3f36;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at top left, color-mix(in oklab, var(--color-earth-200) 55%, white) 0, transparent 32%),
+      radial-gradient(circle at bottom right, color-mix(in oklab, var(--color-earth-100) 70%, white) 0, transparent 30%),
+      linear-gradient(180deg, #fbf8f1 0%, #f3eee4 45%, #ece4d6 100%);
+    font-family: var(--font-body);
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-earth-300) 75%, white);
+    color: var(--color-earth-900);
+  }
+}
+
+@layer components {
+  .site-shell {
+    @apply min-h-screen px-4 py-4 sm:px-6 lg:px-8;
+  }
+
+  .site-frame {
+    @apply mx-auto flex min-h-[calc(100vh-2rem)] max-w-7xl flex-col overflow-hidden rounded-[2rem] border border-base-300/80 bg-base-100/90 shadow-[0_25px_80px_rgba(47,36,24,0.12)] backdrop-blur;
+  }
+
+  .site-nav-link {
+    @apply rounded-full px-4 py-2 text-sm tracking-[0.18em] text-base-content/65 uppercase transition;
+  }
+
+  .site-nav-link:hover,
+  .site-nav-link[aria-current="page"] {
+    @apply bg-base-content text-base-100;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.32em] text-base-content/60;
+  }
+
+  .display-title {
+    font-family: var(--font-display);
+    @apply text-5xl leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl;
+  }
+
+  .section-card {
+    @apply rounded-[1.75rem] border border-base-300 bg-base-100/80 p-6 shadow-sm sm:p-8;
+  }
+
+  .soft-rule {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-base-300 to-transparent;
+  }
+
+  .menu-row {
+    @apply flex items-baseline justify-between gap-6 border-b border-dashed border-base-300 py-4;
+  }
+
+  .menu-row:last-child {
+    @apply border-b-0 pb-0;
+  }
+}

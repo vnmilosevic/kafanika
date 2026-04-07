@@ -4,12 +4,46 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ title ?? site:name }}</title>
+        <title>{{ if title }}{{ title }} | Кафаника{{ else }}Кафаника | Кафе ресторан у околини Ивањице{{ /if }}</title>
+        <meta name="description" content="Кафаника је мали кафе ресторан у околини Ивањице, на 700 метара надморске висине, са домаћом кухињом, колачима и локалним производима.">
         {{ vite src="resources/js/site.js|resources/css/site.css" }}
     </head>
     <body class="bg-base-100 text-base-content font-sans leading-normal">
-        <div class="mx-auto px-2 lg:min-h-screen flex flex-col items-center justify-center">
-            {{ template_content }}
+        <div class="site-shell">
+            <div class="site-frame">
+                <header class="border-b border-base-300/80 px-5 py-4 sm:px-8 lg:px-10">
+                    <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+                        <a href="/" class="flex items-center gap-4">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-full border border-base-content/20 bg-base-200 text-lg font-semibold">K</div>
+                            <div>
+                                <div class="font-serif text-2xl tracking-tight">Кафаника</div>
+                                <div class="text-xs uppercase tracking-[0.28em] text-base-content/55">Ивањица • 700 м • домаћа кухиња</div>
+                            </div>
+                        </a>
+                        <nav class="flex flex-wrap gap-2">
+                            <a href="/" class="site-nav-link" {{ if current_uri == "/" }}aria-current="page"{{ /if }}>Почетна</a>
+                            <a href="/meni" class="site-nav-link" {{ if current_uri == "/meni" }}aria-current="page"{{ /if }}>Мени</a>
+                            <a href="/nasa-prica" class="site-nav-link" {{ if current_uri == "/nasa-prica" }}aria-current="page"{{ /if }}>Наша прича</a>
+                            <a href="/kontakt" class="site-nav-link" {{ if current_uri == "/kontakt" }}aria-current="page"{{ /if }}>Контакт</a>
+                        </nav>
+                    </div>
+                </header>
+
+                <main class="flex-1 px-5 py-6 sm:px-8 sm:py-8 lg:px-10 lg:py-10">
+                    {{ template_content }}
+                </main>
+
+                <footer class="border-t border-base-300/80 px-5 py-6 text-sm text-base-content/70 sm:px-8 lg:px-10">
+                    <div class="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+                        <p>Кафаника је мало место за кафу, домаћи ручак и колач после шетње кроз западну Србију.</p>
+                        <div class="flex flex-wrap gap-4 uppercase tracking-[0.2em] text-xs">
+                            <span>Ивањица и околина</span>
+                            <span>Локални производи</span>
+                            <span>Домаћа кухиња</span>
+                        </div>
+                    </div>
+                </footer>
+            </div>
         </div>
     </body>
 </html>
