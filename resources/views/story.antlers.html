@@ -1,55 +1,80 @@
 <section class="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
     <div class="section-card">
-        <div class="eyebrow">Наша прича</div>
-        <h1 class="mt-3 font-serif text-5xl tracking-tight text-earth-900">Место које више личи на свраћање него на резервацију.</h1>
+        <div class="eyebrow">{{ intro_eyebrow }}</div>
+        <h1 class="mt-3 font-serif text-5xl tracking-tight text-earth-900">{{ intro_title }}</h1>
         <p class="mt-5 text-lg leading-8 text-base-content/75">
-            Кафаника је замишљена као мали кафе ресторан у брдима изнад Ивањице, тамо где ваздух мења темпо дана,
-            а храна и кафа имају више смисла када се служе без журбе.
+            {{ intro_text }}
         </p>
     </div>
     <div class="section-card bg-earth-900 text-earth-50">
-        <div class="eyebrow text-earth-100/70">Карактер</div>
+        <div class="eyebrow text-earth-100/70">{{ character_eyebrow }}</div>
         <p class="mt-4 leading-8">
-            Нема велике приче ради ефекта. Постоји само јасна идеја: добра кафа, неколико домаћих јела, колачи који миришу
-            на кућу и осећај да је овде сасвим нормално остати мало дуже него што си планирао.
+            {{ character_text }}
         </p>
     </div>
 </section>
 
-<section class="mt-6 grid gap-6 md:grid-cols-3">
-    <article class="section-card">
-        <div class="eyebrow">1</div>
-        <h2 class="mt-3 font-serif text-2xl">Мали обим</h2>
-        <p class="mt-3 text-base-content/75">
-            Сајт и простор треба да делују скромно, уређено и пажљиво. Не луксузно, него искрено.
+<section class="mt-6 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+    <figure class="hero-image">
+        <img
+            src="{{ mood_image_url }}"
+            alt="{{ mood_image_alt }}"
+            loading="lazy"
+            decoding="async"
+        >
+        <figcaption class="hero-image-copy">
+            <div class="eyebrow text-base-100/70">{{ mood_image_eyebrow }}</div>
+            <p class="mt-3 max-w-xl text-sm leading-7 text-base-100/90">
+                {{ mood_image_text }}
+            </p>
+        </figcaption>
+    </figure>
+    <div class="section-card">
+        <div class="eyebrow">{{ feeling_eyebrow }}</div>
+        <p class="mt-4 text-base-content/75">
+            {{ feeling_text }}
         </p>
-    </article>
-    <article class="section-card">
-        <div class="eyebrow">2</div>
-        <h2 class="mt-3 font-serif text-2xl">Локални тон</h2>
-        <p class="mt-3 text-base-content/75">
-            Западна Србија је присутна кроз боје, ритам текста, врсте јела и начин на који комуницирамо место.
-        </p>
-    </article>
-    <article class="section-card">
-        <div class="eyebrow">3</div>
-        <h2 class="mt-3 font-serif text-2xl">Без вишка</h2>
-        <p class="mt-3 text-base-content/75">
-            Кратак мени, неколико јасних порука и довољно простора да фотографије и садржај касније дишу.
-        </p>
-    </article>
-</section>
-
-<section class="mt-6 section-card">
-    <div class="eyebrow">Како ово може даље</div>
-    <div class="mt-4 grid gap-6 lg:grid-cols-2">
-        <p class="text-base-content/75">
-            Следећа фаза може да уведе уредиве секције за насловну фотографију, дневни мени, радно време, контакт форму,
-            препоруке гостију и једноставну галерију простора и хране.
-        </p>
-        <p class="text-base-content/75">
-            Визуелно, концепт је сада постављен као мешавина кафе-ресторана и планинског дома: топао, природан, тих и
-            довољно карактеран да не делује као генерички локални бизнис сајт.
+        <p class="mt-4 text-base-content/75">
+            {{ feeling_note }}
         </p>
     </div>
+</section>
+
+<section class="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+    {{ collection:stories sort="sort_order" }}
+        <article class="section-card overflow-hidden p-0">
+            {{ if image_url }}
+                <div class="aspect-[5/4] overflow-hidden">
+                    <img src="{{ image_url }}" alt="{{ image_alt }}" class="h-full w-full object-cover">
+                </div>
+            {{ /if }}
+            <div class="p-6 sm:p-7">
+                <div class="eyebrow">{{ card_eyebrow }}</div>
+                <h2 class="mt-3 font-serif text-2xl text-earth-900">{{ title }}</h2>
+                <p class="mt-3 text-base-content/75">{{ excerpt }}</p>
+                {{ if body }}
+                    <div class="prose prose-sm mt-5 max-w-none prose-p:text-base-content/75">
+                        {{ body }}
+                    </div>
+                {{ /if }}
+                {{ if image_caption }}
+                    <div class="mt-5 text-xs uppercase tracking-[0.2em] text-base-content/50">{{ image_caption }}</div>
+                {{ /if }}
+            </div>
+        </article>
+    {{ /collection:stories }}
+</section>
+
+<section class="mt-6 grid gap-6 md:grid-cols-2">
+    {{ gallery_images }}
+        <figure class="photo-card aspect-[16/11]">
+            <img
+                src="{{ image_url }}"
+                alt="{{ alt }}"
+                loading="lazy"
+                decoding="async"
+            >
+            <figcaption class="photo-caption">{{ caption }}</figcaption>
+        </figure>
+    {{ /gallery_images }}
 </section>

@@ -1,0 +1,268 @@
+title: Почетна
+tabs:
+  glavna:
+    display: Главна
+    sections:
+      -
+        display: Основно
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: Наслов у контролном панелу
+              validate:
+                - required
+          -
+            handle: template
+            field:
+              type: hidden
+              default: home
+          -
+            handle: hero_eyebrow
+            field:
+              type: text
+              display: Наднаслов
+          -
+            handle: hero_title
+            field:
+              type: text
+              display: Главни наслов
+              validate:
+                - required
+          -
+            handle: hero_text
+            field:
+              type: textarea
+              display: Уводни текст
+              antlers: false
+          -
+            handle: primary_cta_label
+            field:
+              type: text
+              display: Текст главног дугмета
+          -
+            handle: primary_cta_url
+            field:
+              type: text
+              display: Линк главног дугмета
+          -
+            handle: secondary_cta_label
+            field:
+              type: text
+              display: Текст споредног дугмета
+          -
+            handle: secondary_cta_url
+            field:
+              type: text
+              display: Линк споредног дугмета
+  sekcije:
+    display: Секције
+    sections:
+      -
+        display: Истакнуте бројке
+        fields:
+          -
+            handle: highlights
+            field:
+              type: grid
+              display: Истакнуте ставке
+              min_rows: 3
+              max_rows: 3
+              fields:
+                -
+                  handle: value
+                  field:
+                    type: text
+                    display: Вредност
+                -
+                  handle: label
+                  field:
+                    type: text
+                    display: Опис
+      -
+        display: Ритам и опис
+        fields:
+          -
+            handle: rhythm_title
+            field:
+              type: text
+              display: Наслов ритма дана
+          -
+            handle: rhythm_intro
+            field:
+              type: textarea
+              display: Први пасус
+              antlers: false
+          -
+            handle: rhythm_note
+            field:
+              type: textarea
+              display: Други пасус
+              antlers: false
+          -
+            handle: traits
+            field:
+              type: grid
+              display: Ставке које описују место
+              fields:
+                -
+                  handle: text
+                  field:
+                    type: text
+                    display: Текст ставке
+          -
+            handle: menu_section_eyebrow
+            field:
+              type: text
+              display: Наднаслов секције о менију
+          -
+            handle: menu_section_title
+            field:
+              type: text
+              display: Наслов секције о менију
+          -
+            handle: menu_section_text
+            field:
+              type: textarea
+              display: Текст секције о менију
+              antlers: false
+          -
+            handle: menu_section_link_label
+            field:
+              type: text
+              display: Текст линка
+          -
+            handle: menu_section_link_url
+            field:
+              type: text
+              display: URL линка
+          -
+            handle: kitchen_title
+            field:
+              type: text
+              display: Наслов картице из кухиње
+          -
+            handle: kitchen_text
+            field:
+              type: textarea
+              display: Текст картице из кухиње
+              antlers: false
+          -
+            handle: sweets_title
+            field:
+              type: text
+              display: Наслов картице из витрине
+          -
+            handle: sweets_text
+            field:
+              type: textarea
+              display: Текст картице из витрине
+              antlers: false
+          -
+            handle: place_title
+            field:
+              type: text
+              display: Наслов картице о месту
+          -
+            handle: place_text
+            field:
+              type: textarea
+              display: Текст картице о месту
+              antlers: false
+      -
+        display: Завршни блок
+        fields:
+          -
+            handle: closing_eyebrow
+            field:
+              type: text
+              display: Наднаслов завршног блока
+          -
+            handle: closing_title
+            field:
+              type: text
+              display: Наслов завршног блока
+          -
+            handle: closing_text
+            field:
+              type: textarea
+              display: Текст завршног блока
+              antlers: false
+          -
+            handle: closing_link_label
+            field:
+              type: text
+              display: Текст дугмета
+          -
+            handle: closing_link_url
+            field:
+              type: text
+              display: Линк дугмета
+  galerija:
+    display: Галерија
+    sections:
+      -
+        display: Велике фотографије
+        fields:
+          -
+            handle: hero_image_url
+            field:
+              type: text
+              display: URL велике фотографије
+          -
+            handle: hero_image_alt
+            field:
+              type: text
+              display: Alt текст велике фотографије
+          -
+            handle: hero_image_eyebrow
+            field:
+              type: text
+              display: Наднаслов преко фотографије
+          -
+            handle: hero_image_text
+            field:
+              type: textarea
+              display: Текст преко фотографије
+              antlers: false
+          -
+            handle: side_image_url
+            field:
+              type: text
+              display: URL споредне фотографије
+          -
+            handle: side_image_alt
+            field:
+              type: text
+              display: Alt текст споредне фотографије
+          -
+            handle: side_image_caption
+            field:
+              type: text
+              display: Потпис споредне фотографије
+      -
+        display: Доња галерија
+        fields:
+          -
+            handle: gallery_images
+            field:
+              type: grid
+              display: Фотографије галерије
+              min_rows: 3
+              fields:
+                -
+                  handle: image_url
+                  field:
+                    type: text
+                    display: URL фотографије
+                -
+                  handle: alt
+                  field:
+                    type: text
+                    display: Alt текст
+                -
+                  handle: caption
+                  field:
+                    type: text
+                    display: Потпис

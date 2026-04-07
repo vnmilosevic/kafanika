@@ -1,96 +1,127 @@
 <section class="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:gap-8">
     <div class="section-card relative overflow-hidden bg-[linear-gradient(135deg,rgba(255,255,255,0.95),rgba(239,230,215,0.96))]">
-        <div class="mb-6 eyebrow">Мали кафе ресторан у околини Ивањице</div>
-        <h1 class="display-title max-w-3xl text-earth-900">Кафа, домаћи ручак и мир планине на 700 метара.</h1>
+        <div class="mb-6 eyebrow">{{ hero_eyebrow }}</div>
+        <h1 class="display-title max-w-3xl text-earth-900">{{ hero_title }}</h1>
         <p class="mt-6 max-w-2xl text-lg leading-8 text-base-content/75">
-            Кафаника је место за спору јутарњу кафу, колач из домаће радионице и једноставан мени који прати сезону,
-            крај и људе који овде живе. Без журбе, без претварања, са укусима западне Србије.
+            {{ hero_text }}
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
-            <a href="/meni" class="btn btn-neutral rounded-full px-6">Погледај мени</a>
-            <a href="/kontakt" class="btn btn-outline rounded-full px-6">Како до нас</a>
+            <a href="{{ primary_cta_url }}" class="btn btn-neutral rounded-full px-6">{{ primary_cta_label }}</a>
+            <a href="{{ secondary_cta_url }}" class="btn btn-outline rounded-full px-6">{{ secondary_cta_label }}</a>
         </div>
         <div class="mt-10 grid gap-4 sm:grid-cols-3">
-            <div>
-                <div class="text-3xl font-semibold text-earth-900">700 m</div>
-                <div class="mt-1 text-sm uppercase tracking-[0.2em] text-base-content/60">Надморска висина</div>
-            </div>
-            <div>
-                <div class="text-3xl font-semibold text-earth-900">Локално</div>
-                <div class="mt-1 text-sm uppercase tracking-[0.2em] text-base-content/60">Намирнице и произвођачи</div>
-            </div>
-            <div>
-                <div class="text-3xl font-semibold text-earth-900">Једноставно</div>
-                <div class="mt-1 text-sm uppercase tracking-[0.2em] text-base-content/60">Мали мени и домаћи колачи</div>
-            </div>
+            {{ highlights }}
+                <div>
+                    <div class="text-3xl font-semibold text-earth-900">{{ value }}</div>
+                    <div class="mt-1 text-sm uppercase tracking-[0.2em] text-base-content/60">{{ label }}</div>
+                </div>
+            {{ /highlights }}
         </div>
     </div>
 
     <aside class="grid gap-6">
         <div class="section-card bg-earth-900 text-earth-50">
-            <div class="eyebrow text-earth-100/70">Дневни ритам</div>
+            <div class="eyebrow text-earth-100/70">{{ rhythm_title }}</div>
             <div class="mt-3 space-y-4 text-sm leading-7">
-                <p>Јутра су за јаку кафу и питу из рерне. Поподне за лаган ручак. Предвече за колач, ракију и разговор.</p>
+                <p>{{ rhythm_intro }}</p>
                 <div class="soft-rule bg-gradient-to-r from-transparent via-earth-100/20 to-transparent"></div>
-                <p>Овде свраћају комшије, путници, планинари и људи који траже предах пре него што наставе даље.</p>
+                <p>{{ rhythm_note }}</p>
             </div>
         </div>
 
         <div class="section-card">
             <div class="eyebrow">Шта нас описује</div>
             <ul class="mt-4 space-y-3 text-base-content/75">
-                <li>Класична понуда кафића са пажљиво бираном кафом.</li>
-                <li>Колачи, крофне и пите прављени у малим турама.</li>
-                <li>Домаћа јела која се лако деле за столом.</li>
-                <li>Топао ентеријер, дрво, камен и поглед на брда.</li>
+                {{ traits }}
+                    <li>{{ text }}</li>
+                {{ /traits }}
             </ul>
         </div>
     </aside>
 </section>
 
+<section class="mt-6 grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+    <figure class="hero-image">
+        <img
+            src="{{ hero_image_url }}"
+            alt="{{ hero_image_alt }}"
+            loading="eager"
+            decoding="async"
+        >
+        <figcaption class="hero-image-copy">
+            <div class="eyebrow text-base-100/70">{{ hero_image_eyebrow }}</div>
+            <p class="mt-3 max-w-xl text-sm leading-7 text-base-100/90">
+                {{ hero_image_text }}
+            </p>
+        </figcaption>
+    </figure>
+    <div class="section-card">
+        <div class="eyebrow">Како изгледа дан</div>
+        <h2 class="mt-3 font-serif text-3xl text-earth-900">{{ rhythm_title }}</h2>
+        <p class="mt-4 text-base-content/75">
+            {{ rhythm_intro }}
+        </p>
+        <div class="mt-6 soft-rule"></div>
+        <p class="mt-6 text-base-content/75">
+            {{ rhythm_note }}
+        </p>
+    </div>
+</section>
+
 <section class="mt-6 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
     <div class="section-card">
-        <div class="eyebrow">Мали мени</div>
-        <h2 class="mt-3 font-serif text-3xl text-earth-900">Довољно кратак да остане свеж.</h2>
+        <div class="eyebrow">{{ menu_section_eyebrow }}</div>
+        <h2 class="mt-3 font-serif text-3xl text-earth-900">{{ menu_section_title }}</h2>
         <p class="mt-4 text-base-content/75">
-            Не правимо дугачак мени. Радије бирамо неколико јела која знамо да припремимо како треба, од састојака који
-            имају смисла за наш крај и годишње доба.
+            {{ menu_section_text }}
         </p>
-        <a href="/meni" class="mt-6 inline-flex text-sm font-semibold uppercase tracking-[0.22em] text-earth-700">Отвори цео мени</a>
+        <a href="{{ menu_section_link_url }}" class="mt-6 inline-flex text-sm font-semibold uppercase tracking-[0.22em] text-earth-700">{{ menu_section_link_label }}</a>
     </div>
 
     <div class="grid gap-4 sm:grid-cols-2">
         <div class="section-card">
-            <div class="eyebrow">Из кухиње</div>
+            <div class="eyebrow">{{ kitchen_title }}</div>
             <h3 class="mt-3 font-serif text-2xl">Потаж, гибаница, телећа чорба</h3>
-            <p class="mt-3 text-base-content/75">Јела која греју и која траже хлеб, кашику и мало времена.</p>
+            <p class="mt-3 text-base-content/75">{{ kitchen_text }}</p>
         </div>
         <div class="section-card">
-            <div class="eyebrow">Из витрине</div>
+            <div class="eyebrow">{{ sweets_title }}</div>
             <h3 class="mt-3 font-serif text-2xl">Колачи, штрудле и воћне пите</h3>
-            <p class="mt-3 text-base-content/75">Слатко које не глуми. Домаћи укус, чисте текстуре и познате комбинације.</p>
+            <p class="mt-3 text-base-content/75">{{ sweets_text }}</p>
         </div>
         <div class="section-card sm:col-span-2 bg-[linear-gradient(135deg,rgba(95,118,81,0.12),rgba(255,255,255,0.92))]">
             <div class="eyebrow">Место</div>
-            <h3 class="mt-3 font-serif text-2xl">Западна Србија као тон сајта</h3>
+            <h3 class="mt-3 font-serif text-2xl">{{ place_title }}</h3>
             <p class="mt-3 max-w-3xl text-base-content/75">
-                Визуелни правац сајта прати оно што Кафаника јесте: смирена, природна, једноставна и довољно карактеристична да
-                остане у памћењу без потребе за вишком детаља.
+                {{ place_text }}
             </p>
         </div>
     </div>
 </section>
 
+<section class="mt-6 grid gap-6 md:grid-cols-3">
+    {{ gallery_images }}
+        <figure class="photo-card aspect-[0.95]">
+            <img
+                src="{{ image_url }}"
+                alt="{{ alt }}"
+                loading="lazy"
+                decoding="async"
+            >
+            <figcaption class="photo-caption">{{ caption }}</figcaption>
+        </figure>
+    {{ /gallery_images }}
+</section>
+
 <section class="mt-6 section-card">
     <div class="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
         <div>
-            <div class="eyebrow">За следећу фазу</div>
-            <h2 class="mt-3 font-serif text-3xl text-earth-900">Ово је почетни frontend концепт.</h2>
+            <div class="eyebrow">{{ closing_eyebrow }}</div>
+            <h2 class="mt-3 font-serif text-3xl text-earth-900">{{ closing_title }}</h2>
             <p class="mt-4 max-w-3xl text-base-content/75">
-                Када ти легне визуелни смер, следећи корак може бити да исти тон преведемо у Statamic control panel:
-                поља за мени, дневну понуду, радно време, галерију и контакт информације.
+                {{ closing_text }}
             </p>
         </div>
-        <a href="/nasa-prica" class="btn btn-outline rounded-full px-6">Погледај причу</a>
+        <a href="{{ closing_link_url }}" class="btn btn-outline rounded-full px-6">{{ closing_link_label }}</a>
     </div>
 </section>

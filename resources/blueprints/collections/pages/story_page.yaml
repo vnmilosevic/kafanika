@@ -1,0 +1,112 @@
+title: Страница прича
+tabs:
+  uvod:
+    display: Увод
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: Наслов у контролном панелу
+              validate:
+                - required
+          -
+            handle: template
+            field:
+              type: hidden
+              default: story
+          -
+            handle: intro_eyebrow
+            field:
+              type: text
+              display: Наднаслов
+          -
+            handle: intro_title
+            field:
+              type: text
+              display: Наслов
+          -
+            handle: intro_text
+            field:
+              type: textarea
+              display: Уводни текст
+              antlers: false
+          -
+            handle: character_eyebrow
+            field:
+              type: text
+              display: Наднаслов блока карактера
+          -
+            handle: character_text
+            field:
+              type: textarea
+              display: Текст блока карактера
+              antlers: false
+  atmosfera:
+    display: Атмосфера
+    sections:
+      -
+        fields:
+          -
+            handle: mood_image_url
+            field:
+              type: text
+              display: URL велике фотографије
+          -
+            handle: mood_image_alt
+            field:
+              type: text
+              display: Alt текст велике фотографије
+          -
+            handle: mood_image_eyebrow
+            field:
+              type: text
+              display: Наднаслов преко фотографије
+          -
+            handle: mood_image_text
+            field:
+              type: textarea
+              display: Текст преко фотографије
+              antlers: false
+          -
+            handle: feeling_eyebrow
+            field:
+              type: text
+              display: Наднаслов блока
+          -
+            handle: feeling_text
+            field:
+              type: textarea
+              display: Први пасус
+              antlers: false
+          -
+            handle: feeling_note
+            field:
+              type: textarea
+              display: Други пасус
+              antlers: false
+          -
+            handle: gallery_images
+            field:
+              type: grid
+              display: Доње фотографије
+              min_rows: 2
+              max_rows: 2
+              fields:
+                -
+                  handle: image_url
+                  field:
+                    type: text
+                    display: URL фотографије
+                -
+                  handle: alt
+                  field:
+                    type: text
+                    display: Alt текст
+                -
+                  handle: caption
+                  field:
+                    type: text
+                    display: Потпис

@@ -1,0 +1,116 @@
+title: Страница менија
+tabs:
+  uvod:
+    display: Увод
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: Наслов у контролном панелу
+              validate:
+                - required
+          -
+            handle: template
+            field:
+              type: hidden
+              default: menu
+          -
+            handle: intro_eyebrow
+            field:
+              type: text
+              display: Наднаслов
+          -
+            handle: intro_title
+            field:
+              type: text
+              display: Наслов
+          -
+            handle: intro_text
+            field:
+              type: textarea
+              display: Уводни текст
+              antlers: false
+  atmosfera:
+    display: Атмосфера
+    sections:
+      -
+        fields:
+          -
+            handle: prep_eyebrow
+            field:
+              type: text
+              display: Наднаслов секције
+          -
+            handle: prep_title
+            field:
+              type: text
+              display: Наслов секције
+          -
+            handle: prep_text
+            field:
+              type: textarea
+              display: Текст секције
+              antlers: false
+          -
+            handle: prep_image_url
+            field:
+              type: text
+              display: URL фотографије
+          -
+            handle: prep_image_alt
+            field:
+              type: text
+              display: Alt текст фотографије
+          -
+            handle: prep_image_caption
+            field:
+              type: text
+              display: Потпис фотографије
+          -
+            handle: pair_gallery
+            field:
+              type: grid
+              display: Две фотографије
+              min_rows: 2
+              max_rows: 2
+              fields:
+                -
+                  handle: image_url
+                  field:
+                    type: text
+                    display: URL фотографије
+                -
+                  handle: alt
+                  field:
+                    type: text
+                    display: Alt текст
+                -
+                  handle: caption
+                  field:
+                    type: text
+                    display: Потпис
+          -
+            handle: closing_eyebrow
+            field:
+              type: text
+              display: Наднаслов доњег блока
+          -
+            handle: closing_text
+            field:
+              type: textarea
+              display: Текст доњег блока
+              antlers: false
+          -
+            handle: products_title
+            field:
+              type: text
+              display: Наслов блока о домаћим производима
+          -
+            handle: products_text
+            field:
+              type: textarea
+              display: Текст блока о домаћим производима
+              antlers: false

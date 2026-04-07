@@ -1,129 +1,108 @@
 <section class="section-card">
-    <div class="eyebrow">Мени</div>
-    <h1 class="mt-3 font-serif text-5xl tracking-tight text-earth-900">Једноставна понуда за цео дан.</h1>
+    <div class="eyebrow">{{ intro_eyebrow }}</div>
+    <h1 class="mt-3 font-serif text-5xl tracking-tight text-earth-900">{{ intro_title }}</h1>
     <p class="mt-5 max-w-3xl text-lg leading-8 text-base-content/75">
-        Мени је замишљен као преглед онога што би Кафаника могла да нуди свакодневно: неколико сигурних сланих јела,
-        неколико слатких ствари и добра кафа. Кратак, разумљив и лак за одржавање.
+        {{ intro_text }}
     </p>
+</section>
+
+<section class="mt-6 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+    <div class="section-card">
+        <div class="eyebrow">{{ prep_eyebrow }}</div>
+        <h2 class="mt-3 font-serif text-3xl text-earth-900">{{ prep_title }}</h2>
+        <p class="mt-4 text-base-content/75">
+            {{ prep_text }}
+        </p>
+    </div>
+    <figure class="photo-card aspect-[16/10]">
+        <img
+            src="{{ prep_image_url }}"
+            alt="{{ prep_image_alt }}"
+            loading="lazy"
+            decoding="async"
+        >
+        <figcaption class="photo-caption">{{ prep_image_caption }}</figcaption>
+    </figure>
 </section>
 
 <section class="mt-6 grid gap-6 xl:grid-cols-3">
     <article class="section-card xl:col-span-1">
         <div class="eyebrow">Кафа и пиће</div>
         <div class="mt-5 space-y-1">
-            <div class="menu-row">
-                <div>
-                    <h3 class="font-semibold">Еспресо</h3>
-                    <p class="text-sm text-base-content/65">Јак, кратак, свакодневан.</p>
-                </div>
-                <span class="text-sm uppercase tracking-[0.18em]">220 rsd</span>
-            </div>
-            <div class="menu-row">
-                <div>
-                    <h3 class="font-semibold">Домаћа кафа</h3>
-                    <p class="text-sm text-base-content/65">Мирнији ритам и дужи разговор.</p>
-                </div>
-                <span class="text-sm uppercase tracking-[0.18em]">200 rsd</span>
-            </div>
-            <div class="menu-row">
-                <div>
-                    <h3 class="font-semibold">Капућино</h3>
-                    <p class="text-sm text-base-content/65">Мекши укус, више млека.</p>
-                </div>
-                <span class="text-sm uppercase tracking-[0.18em]">260 rsd</span>
-            </div>
-            <div class="menu-row">
-                <div>
-                    <h3 class="font-semibold">Домаћи сок</h3>
-                    <p class="text-sm text-base-content/65">Малина, зова или јабука.</p>
-                </div>
-                <span class="text-sm uppercase tracking-[0.18em]">280 rsd</span>
-            </div>
+            {{ collection:menu_items sort="sort_order" }}
+                {{ if available && (category == "kafa" || category == "pice") }}
+                    <div class="menu-row">
+                        <div>
+                            <h3 class="font-semibold">{{ title }}</h3>
+                            <p class="text-sm text-base-content/65">{{ summary }}</p>
+                        </div>
+                        <span class="text-sm uppercase tracking-[0.18em]">{{ price }}</span>
+                    </div>
+                {{ /if }}
+            {{ /collection:menu_items }}
         </div>
     </article>
 
     <article class="section-card xl:col-span-1">
         <div class="eyebrow">Слано</div>
         <div class="mt-5 space-y-1">
-            <div class="menu-row">
-                <div>
-                    <h3 class="font-semibold">Гибаница из плеха</h3>
-                    <p class="text-sm text-base-content/65">Сир, коре и јогурт са оближње фарме.</p>
-                </div>
-                <span class="text-sm uppercase tracking-[0.18em]">490 rsd</span>
-            </div>
-            <div class="menu-row">
-                <div>
-                    <h3 class="font-semibold">Телећа чорба</h3>
-                    <p class="text-sm text-base-content/65">Кувана споро, са коренастим поврћем.</p>
-                </div>
-                <span class="text-sm uppercase tracking-[0.18em]">520 rsd</span>
-            </div>
-            <div class="menu-row">
-                <div>
-                    <h3 class="font-semibold">Уштипци и кајмак</h3>
-                    <p class="text-sm text-base-content/65">За дељење, уз салату или суво месо.</p>
-                </div>
-                <span class="text-sm uppercase tracking-[0.18em]">690 rsd</span>
-            </div>
-            <div class="menu-row">
-                <div>
-                    <h3 class="font-semibold">Дневни тањир</h3>
-                    <p class="text-sm text-base-content/65">Мења се са сезоном и расположивим намирницама.</p>
-                </div>
-                <span class="text-sm uppercase tracking-[0.18em]">од 780 rsd</span>
-            </div>
+            {{ collection:menu_items sort="sort_order" }}
+                {{ if available && category == "slano" }}
+                    <div class="menu-row">
+                        <div>
+                            <h3 class="font-semibold">{{ title }}</h3>
+                            <p class="text-sm text-base-content/65">{{ summary }}</p>
+                        </div>
+                        <span class="text-sm uppercase tracking-[0.18em]">{{ price }}</span>
+                    </div>
+                {{ /if }}
+            {{ /collection:menu_items }}
         </div>
     </article>
 
     <article class="section-card xl:col-span-1">
         <div class="eyebrow">Слатко</div>
         <div class="mt-5 space-y-1">
-            <div class="menu-row">
-                <div>
-                    <h3 class="font-semibold">Пита са јабукама</h3>
-                    <p class="text-sm text-base-content/65">Хрскава кора и доста цимета.</p>
-                </div>
-                <span class="text-sm uppercase tracking-[0.18em]">360 rsd</span>
-            </div>
-            <div class="menu-row">
-                <div>
-                    <h3 class="font-semibold">Штрудла са маком</h3>
-                    <p class="text-sm text-base-content/65">Танка, мирисна и домаћа.</p>
-                </div>
-                <span class="text-sm uppercase tracking-[0.18em]">340 rsd</span>
-            </div>
-            <div class="menu-row">
-                <div>
-                    <h3 class="font-semibold">Колач дана</h3>
-                    <p class="text-sm text-base-content/65">Мења се у зависности од печења тог јутра.</p>
-                </div>
-                <span class="text-sm uppercase tracking-[0.18em]">390 rsd</span>
-            </div>
-            <div class="menu-row">
-                <div>
-                    <h3 class="font-semibold">Џем и путер уз пециво</h3>
-                    <p class="text-sm text-base-content/65">За лаган почетак дана.</p>
-                </div>
-                <span class="text-sm uppercase tracking-[0.18em]">320 rsd</span>
-            </div>
+            {{ collection:menu_items sort="sort_order" }}
+                {{ if available && category == "slatko" }}
+                    <div class="menu-row">
+                        <div>
+                            <h3 class="font-semibold">{{ title }}</h3>
+                            <p class="text-sm text-base-content/65">{{ summary }}</p>
+                        </div>
+                        <span class="text-sm uppercase tracking-[0.18em]">{{ price }}</span>
+                    </div>
+                {{ /if }}
+            {{ /collection:menu_items }}
         </div>
     </article>
 </section>
 
+<section class="mt-6 grid gap-6 md:grid-cols-2">
+    {{ pair_gallery }}
+        <figure class="photo-card aspect-[16/11]">
+            <img
+                src="{{ image_url }}"
+                alt="{{ alt }}"
+                loading="lazy"
+                decoding="async"
+            >
+            <figcaption class="photo-caption">{{ caption }}</figcaption>
+        </figure>
+    {{ /pair_gallery }}
+</section>
+
 <section class="mt-6 grid gap-6 lg:grid-cols-[1fr_0.9fr]">
     <div class="section-card">
-        <div class="eyebrow">Напомена</div>
+        <div class="eyebrow">{{ closing_eyebrow }}</div>
         <p class="mt-4 text-base-content/75">
-            Цене и ставке су овде као концепт за frontend. Када пређемо на Statamic backend део, ове секције можемо лако
-            претворити у уредиве блокове за мени, дневну понуду и сезонске измене.
+            {{ closing_text }}
         </p>
     </div>
     <div class="section-card bg-[linear-gradient(135deg,rgba(111,63,54,0.09),rgba(255,255,255,0.9))]">
-        <div class="eyebrow">Домаћи производи</div>
+        <div class="eyebrow">{{ products_title }}</div>
         <p class="mt-4 text-base-content/75">
-            Уз храну и пиће може постојати и мала витрина са локалним џемовима, ракијом, медом или сушеним воћем,
-            што сајту даје додатни слој аутентичности без компликовања основне понуде.
+            {{ products_text }}
         </p>
     </div>
 </section>

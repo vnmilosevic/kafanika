@@ -1,0 +1,106 @@
+title: Контакт
+tabs:
+  uvod:
+    display: Увод
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: Наслов у контролном панелу
+              validate:
+                - required
+          -
+            handle: template
+            field:
+              type: hidden
+              default: contact
+          -
+            handle: intro_eyebrow
+            field:
+              type: text
+              display: Наднаслов
+          -
+            handle: intro_title
+            field:
+              type: text
+              display: Наслов
+          -
+            handle: intro_text
+            field:
+              type: textarea
+              display: Уводни текст
+              antlers: false
+  detalji:
+    display: Детаљи
+    sections:
+      -
+        fields:
+          -
+            handle: contact_details
+            field:
+              type: grid
+              display: Контакт детаљи
+              fields:
+                -
+                  handle: label
+                  field:
+                    type: text
+                    display: Назив
+                -
+                  handle: value
+                  field:
+                    type: textarea
+                    display: Вредност
+                    antlers: false
+          -
+            handle: discovery_eyebrow
+            field:
+              type: text
+              display: Наднаслов блока
+          -
+            handle: discovery_text
+            field:
+              type: textarea
+              display: Текст блока
+              antlers: false
+          -
+            handle: guest_notes
+            field:
+              type: grid
+              display: Напомене за госте
+              fields:
+                -
+                  handle: text
+                  field:
+                    type: text
+                    display: Текст ставке
+  galerija:
+    display: Галерија
+    sections:
+      -
+        fields:
+          -
+            handle: gallery_images
+            field:
+              type: grid
+              display: Фотографије
+              min_rows: 2
+              fields:
+                -
+                  handle: image_url
+                  field:
+                    type: text
+                    display: URL фотографије
+                -
+                  handle: alt
+                  field:
+                    type: text
+                    display: Alt текст
+                -
+                  handle: caption
+                  field:
+                    type: text
+                    display: Потпис

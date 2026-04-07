@@ -71,6 +71,39 @@
     @apply rounded-[1.75rem] border border-base-300 bg-base-100/80 p-6 shadow-sm sm:p-8;
   }
 
+  .photo-card {
+    @apply overflow-hidden rounded-[1.75rem] border border-base-300 bg-base-100 shadow-sm;
+  }
+
+  .photo-card img {
+    @apply h-full w-full object-cover transition duration-700 ease-out;
+  }
+
+  .photo-card:hover img {
+    transform: scale(1.03);
+  }
+
+  .photo-caption {
+    @apply border-t border-base-300/80 px-4 py-3 text-xs uppercase tracking-[0.2em] text-base-content/55;
+  }
+
+  .hero-image {
+    @apply relative min-h-[22rem] overflow-hidden rounded-[1.75rem] border border-base-300;
+  }
+
+  .hero-image::after {
+    content: "";
+    @apply absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent;
+  }
+
+  .hero-image img {
+    @apply h-full w-full object-cover;
+  }
+
+  .hero-image-copy {
+    @apply absolute inset-x-0 bottom-0 z-10 p-6 text-base-100 sm:p-8;
+  }
+
   .soft-rule {
     @apply h-px w-full bg-gradient-to-r from-transparent via-base-300 to-transparent;
   }

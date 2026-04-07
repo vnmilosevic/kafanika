@@ -1,0 +1,51 @@
+title: Прича
+tabs:
+  glavna:
+    display: Главна
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: Наслов
+              validate:
+                - required
+          -
+            handle: card_eyebrow
+            field:
+              type: text
+              display: Мали наднаслов
+          -
+            handle: excerpt
+            field:
+              type: textarea
+              display: Кратак текст
+              antlers: false
+          -
+            handle: body
+            field:
+              type: markdown
+              display: Дужи текст
+          -
+            handle: image_url
+            field:
+              type: text
+              display: URL фотографије
+          -
+            handle: image_alt
+            field:
+              type: text
+              display: Alt текст фотографије
+          -
+            handle: image_caption
+            field:
+              type: text
+              display: Потпис фотографије
+          -
+            handle: sort_order
+            field:
+              type: integer
+              display: Редослед
+              default: 1

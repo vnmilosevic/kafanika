@@ -1,0 +1,59 @@
+title: Ставка менија
+tabs:
+  glavna:
+    display: Главна
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: Назив
+              validate:
+                - required
+          -
+            handle: category
+            field:
+              type: select
+              display: Категорија
+              options:
+                kafa: Кафа
+                pice: Пиће
+                slano: Слано
+                slatko: Слатко
+              validate:
+                - required
+          -
+            handle: price
+            field:
+              type: text
+              display: Цена
+              validate:
+                - required
+          -
+            handle: summary
+            field:
+              type: textarea
+              display: Кратак опис
+              antlers: false
+          -
+            handle: sort_order
+            field:
+              type: integer
+              display: Редослед
+              default: 1
+              width: 33
+          -
+            handle: featured
+            field:
+              type: toggle
+              display: Истакнуто
+              width: 33
+          -
+            handle: available
+            field:
+              type: toggle
+              display: Доступно
+              default: true
+              width: 33

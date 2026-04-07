@@ -1,0 +1,5 @@
+title: Мени
+route: false
+propagate: true
+entry_blueprints:
+  - menu_item
