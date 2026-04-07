@@ -75,19 +75,21 @@
         <p class="mt-4 text-base-content/75">
             {{ menu_section_text }}
         </p>
-        <a href="{{ menu_section_link_url }}" class="mt-6 inline-flex text-sm font-semibold uppercase tracking-[0.22em] text-earth-700">{{ menu_section_link_label }}</a>
+        <a href="{{ menu_section_link_url }}" class="btn btn-neutral mt-6 rounded-full px-6">{{ menu_section_link_label }}</a>
     </div>
 
     <div class="grid gap-4 sm:grid-cols-2">
-        <div class="section-card">
+        <div class="section-card flex h-full flex-col">
             <div class="eyebrow">{{ kitchen_title }}</div>
             <h3 class="mt-3 font-serif text-2xl">Потаж, гибаница, телећа чорба</h3>
-            <p class="mt-3 text-base-content/75">{{ kitchen_text }}</p>
+            <p class="mt-3 flex-1 text-base-content/75">{{ kitchen_text }}</p>
+            <a href="/meni" class="btn btn-outline mt-6 self-start rounded-full px-5">Наручи</a>
         </div>
-        <div class="section-card">
+        <div class="section-card flex h-full flex-col">
             <div class="eyebrow">{{ sweets_title }}</div>
             <h3 class="mt-3 font-serif text-2xl">Колачи, штрудле и воћне пите</h3>
-            <p class="mt-3 text-base-content/75">{{ sweets_text }}</p>
+            <p class="mt-3 flex-1 text-base-content/75">{{ sweets_text }}</p>
+            <a href="/meni" class="btn btn-outline mt-6 self-start rounded-full px-5">Наручи</a>
         </div>
         <div class="section-card sm:col-span-2 bg-[linear-gradient(135deg,rgba(95,118,81,0.12),rgba(255,255,255,0.92))]">
             <div class="eyebrow">Место</div>
